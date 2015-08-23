@@ -259,6 +259,21 @@
                 "name": "5th World"
             },
             "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    7.256,
+                    10.0315
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "code": "CAP",
+                "group": "Capitals",
+                "name": "Capital"
+            },
+            "type": "Feature"
         }
     ],
     "type": "FeatureCollection"
