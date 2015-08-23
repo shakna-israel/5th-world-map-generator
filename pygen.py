@@ -2,7 +2,12 @@ import random
 import json
 
 def random_coordinates():
-    raise NotImplementedError
+    # 0 to 15, with up to 4 decimal places
+    x_coord = random.uniform(0, 15)
+    x_coord = round(x_coord, 4)
+    y_coord = random.uniform(0, 15)
+    y_coord = round(y_coord, 4)
+    return {"x": x_coord, "y": y_coord}
 
 def export_geojson(dictIn, outFile):
     json.dump(dictIn,open(outFile,"w+"), sort_keys=True, indent=4, separators=(',', ': '))
@@ -18,7 +23,11 @@ def map_setup():
 
 def main():
     basemap = map_setup()
-    print(basemap)
+    # Set basemap as one of several features:
+    finalMap = {}
+    finalMap['type'] = 'FeatureCollection'
+    finalMap['features'] = []
+    finalMap['features'].append(basemap)
     # Determine the number of Large Cities we'll have, there has to be at least one.
     # Randomly choose one of the Large Cities to be the capital.
     # Determine the number of Small Cities we'll have.
@@ -34,7 +43,7 @@ def main():
     # Assign a location to each of the Ruins.
     # Sometimes draw a road from a Ruin to the closest Village.
     # Export the finished map.
-    export_geojson(basemap, '5thWorld.geojson')
+    export_geojson(finalMap, '5thWorld.geojson')
 
 if __name__ == "__main__":
     main()
