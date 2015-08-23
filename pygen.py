@@ -35,7 +35,7 @@ def random_coordinates_dec(prev_x,prev_y):
 
 def random_name():
     """Generate a random name from a list"""
-    city_list = ["Capital","Awesome","Test","Concept"]
+    city_list = ["Baldur","Borr","Bragi","Buri","Dagur","Delling","Eir","Eostre","Elli","Forseti","Freyja","Freyr","Frigg","Fulla","Gefjun","Hel","Heimdallur","Hermoour","Hlin","Hoor","Hoenir","Iounn","Joro","Kvasir","Lofn","Loki","Magni","Mimir","Nanna","Nerpus","Njorour","Nott","Ooinn","Saga","Ran","Sif","Sjofn","Skaoi","Snotra","Sol","Thor","Thruer","Tyr","Ullr","Vali","Var","Ve","Vioarr","Vor","Yggdrasil","Aegir","Andhrimnir","Aurvandil","Brono","Geirrendour","Glum","Laga"]
     selection = random.choice(city_list)
     return {"name": selection}
 
