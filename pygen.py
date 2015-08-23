@@ -28,15 +28,15 @@ def map_setup():
 
 def gen_basemap():
     basemap = {}
-    basemap['type'] = "Feature"
-    basemap['_id'] = "fifth_world"
-    basemap['properties'] = {}
-    basemap['properties']['name'] = "5th World"
-    basemap['properties']['code'] = "5WRL"
-    basemap['properties']['group'] = "Countries"
-    basemap['geometry'] = {}
-    basemap['geometry']['type'] = "Polygon"
-    basemap['geometry']['coordinates'] = []
+    basemap["type"] = "Feature"
+    basemap["_id"] = "fifth_world"
+    basemap["properties"] = {}
+    basemap["properties"]["name"] = "5th World"
+    basemap["properties"]["code"] = "5WRL"
+    basemap["properties"]["group"] = "Countries"
+    basemap["geometry"] = {}
+    basemap["geometry"]["type"] = "Polygon"
+    basemap["geometry"]["coordinates"] = []
     iter_max = random.randint(10,50)
     iter_position = 0
     listFeatures = []
@@ -48,9 +48,7 @@ def gen_basemap():
         listFeatures.append(new_list)
         iter_position = iter_position + 1
     listFeatures.append(listFeatures[0])
-    lister = []
-    lister.append(listFeatures)
-    basemap['geometry']['coordinates'].append(lister)
+    basemap["geometry"]["coordinates"].append(listFeatures)
     return basemap        
 
 def gen_lister(minLength, maxLength):
