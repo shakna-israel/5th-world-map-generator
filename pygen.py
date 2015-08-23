@@ -1,11 +1,11 @@
 import random
 import json
 
-def random_coordinates():
+def random_coordinates(prev_x,prev_y):
     # Somehow determine max x and y from basemap...
-    x_coord = random.uniform(0, 15)
+    x_coord = random.uniform(prev_x + 0, prev_x + 15)
     x_coord = round(x_coord, 4)
-    y_coord = random.uniform(0, 15)
+    y_coord = random.uniform(prev_y + 0, prev_y + 15)
     y_coord = round(y_coord, 4)
     return {"x": x_coord, "y": y_coord}
 
@@ -40,12 +40,20 @@ def gen_basemap():
     iter_max = random.randint(10,50)
     iter_position = 0
     listFeatures = []
+    firstList = []
+    prev_x = random_coordinates(0,0)['x']
+    firstList.append(int(prev_x))
+    prev_y = random_coordinates(0,0)['y']
+    firstList.append(int(prev_y))
+    listFeatures.append(firstList)
     while iter_position != iter_max:
         info = iter_max - iter_position
-        new_x = random_coordinates()['x']
-        new_y = random_coordinates()['y']
+        new_x = random_coordinates(prev_x, prev_y)['x']
+        new_y = random_coordinates(prev_x, prev_y)['y']
         new_list = [new_x, new_y]
         listFeatures.append(new_list)
+        prev_x = int(new_x)
+        prev_y = int(new_y)
         iter_position = iter_position + 1
     listFeatures.append(listFeatures[0])
     basemap["geometry"]["coordinates"].append(listFeatures)
@@ -85,8 +93,8 @@ def main():
     capitalCityFeature['geometry'] = {}
     capitalCityFeature['geometry']['type'] = 'Point'
     capitalCityFeature['geometry']['coordinates'] = []
-    capitalCityFeature['geometry']['coordinates'].append(random_coordinates()['x'])
-    capitalCityFeature['geometry']['coordinates'].append(random_coordinates()['y'])
+    capitalCityFeature['geometry']['coordinates'].append(random_coordinates(0,0)['x'])
+    capitalCityFeature['geometry']['coordinates'].append(random_coordinates(0,0)['y'])
     finalMap['features'].append(capitalCityFeature)
     # Assign a location to each of the Large Cities.
     # Draw roads from the Capital City to each of the Large Cities.
