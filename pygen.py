@@ -4,8 +4,8 @@ import json
 def random_coordinates():
     raise NotImplementedError
 
-def export_geojson(dictIn):
-    raise NotImplementedError
+def export_geojson(dictIn, outFile):
+    json.dump(dictIn,open(outFile,"w+"), sort_keys=True, indent=4, separators=(',', ': '))
 
 def map_setup():
     # Load in the map of Cameroon, released to Public Domain, as our base map.
@@ -34,6 +34,7 @@ def main():
     # Assign a location to each of the Ruins.
     # Sometimes draw a road from a Ruin to the closest Village.
     # Export the finished map.
+    export_geojson(basemap, '5thWorld.geojson')
 
 if __name__ == "__main__":
     main()
