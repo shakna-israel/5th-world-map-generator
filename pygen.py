@@ -118,7 +118,7 @@ def main():
     LargeCities = gen_lister(1, 10)
     print(str(len(LargeCities)) + " Large Cities.")
     # Randomly choose one of the Large Cities to be the capital.
-
+    
     # Determine the number of Small Cities we'll have.
     SmallCities = gen_lister(0, 20)
     print(str(len(SmallCities)) + " Small Cities.")
@@ -135,6 +135,7 @@ def main():
     capitalCityFeature['geometry']['coordinates'] = []
     capitalCityFeature['geometry']['coordinates'].append(random_coordinates_inc(0,0)['x'])
     capitalCityFeature['geometry']['coordinates'].append(random_coordinates_inc(0,0)['y'])
+    # Somehow check if x and y is within borders of country...
     finalMap['features'].append(capitalCityFeature)
     # Assign a location to each of the Large Cities.
     # Draw roads from the Capital City to each of the Large Cities.
