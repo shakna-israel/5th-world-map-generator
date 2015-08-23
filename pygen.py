@@ -18,18 +18,35 @@ def export_geojson(dictIn, outFile):
     json.dump(dictIn,open(outFile,"w+"), sort_keys=True, indent=4, separators=(',', ': '))
 
 def map_setup():
-    # Load in the map of Cameroon, released to Public Domain, as our base map.
-    basemap = json.load(open('basemap.geojson', 'r'))
-    # Replace our references to Cameroon with something more fitting.
-    basemap['properties']['name'] = "5th World"
-    basemap['properties']['code'] = "5WR"
-    basemap['_id'] = "fifth_world"
+    basemap = gen_basemap()
     # Set basemap as one of several features:
     finalMap = {}
     finalMap['type'] = 'FeatureCollection'
     finalMap['features'] = []
     finalMap['features'].append(basemap)
     return finalMap
+
+def gen_basemap():
+    basemap = {}
+    basemap['type'] = "Feature"
+    basemap['_id'] = "fifth_world"
+    basemap['properties'] = {}
+    basemap['properties']['name'] = "5th World"
+    basemap['properties']['code'] = "5WRL"
+    basemap['properties']['group'] = "Countries"
+    basemap['geometry'] = {}
+    basemap['geometry']['type'] = "Polygon"
+    basemap['geometry']['coordinates'] = []
+    iter_max = random.randint(100,1000)
+    iter_position = 0
+    while iter_position != iter_max:
+        info = iter_max - iter_position
+        new_x = random_coordinates()['x']
+        new_y = random_coordinates()['y']
+        new_list = [new_x, new_y]
+        basemap['geometry']['coordinates'].append(new_list)
+        iter_position = iter_position + 1
+    return basemap        
 
 def gen_lister(minLength, maxLength):
     if type(minLength) != int:
