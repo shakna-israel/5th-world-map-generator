@@ -37,15 +37,20 @@ def gen_basemap():
     basemap['geometry'] = {}
     basemap['geometry']['type'] = "Polygon"
     basemap['geometry']['coordinates'] = []
-    iter_max = random.randint(100,1000)
+    iter_max = random.randint(10,50)
     iter_position = 0
+    listFeatures = []
     while iter_position != iter_max:
         info = iter_max - iter_position
         new_x = random_coordinates()['x']
         new_y = random_coordinates()['y']
         new_list = [new_x, new_y]
-        basemap['geometry']['coordinates'].append(new_list)
+        listFeatures.append(new_list)
         iter_position = iter_position + 1
+    listFeatures.append(listFeatures[0])
+    lister = []
+    lister.append(listFeatures)
+    basemap['geometry']['coordinates'].append(lister)
     return basemap        
 
 def gen_lister(minLength, maxLength):
