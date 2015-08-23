@@ -148,4 +148,4 @@ def main():
     export_geojson(finalMap, '5thWorld.geojson')
 
 if __name__ == "__main__":
-    main(iter)
+    main()
