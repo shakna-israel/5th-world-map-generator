@@ -1,0 +1,5 @@
+(A) 2015-08-23 Cleanup list generation
+(A) 2015-08-23 Fix coord generation - Can create outside borders
+(B) 2015-08-23 Add name list for generation
+(B) 2015-08-23 Make country generation random, rather than relying on a basemap
+(C) 2015-08-23 Push FeatureCollection reference in geojson to top of file
