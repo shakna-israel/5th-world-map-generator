@@ -5,8 +5,12 @@ def random_coordinates(prev_x,prev_y):
     # Somehow determine max x and y from basemap...
     x_coord = random.uniform(prev_x + 0, prev_x + 15)
     x_coord = round(x_coord, 4)
+    if random.randint(0,1) == 1:
+        x_coord = -x_coord
     y_coord = random.uniform(prev_y + 0, prev_y + 15)
     y_coord = round(y_coord, 4)
+    if random.randint(0,1) == 1:
+        y_coord = -y_coord
     return {"x": x_coord, "y": y_coord}
 
 def random_name():
