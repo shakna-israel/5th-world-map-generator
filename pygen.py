@@ -73,7 +73,8 @@ def gen_basemap():
         new_x = random_coordinates_inc(prev_x, prev_y)['x']
         new_y = random_coordinates_inc(prev_x, prev_y)['y']
         new_list = [abs(new_x), abs(new_y)]
-        listFeatures.append(new_list)
+        if new_list not in listFeatures:
+            listFeatures.append(new_list)
         prev_x = int(new_x)
         prev_y = int(new_y)
         iter_position = iter_position + 1
@@ -82,7 +83,8 @@ def gen_basemap():
         new_x = random_coordinates_dec(prev_x, prev_y)['x']
         new_y = random_coordinates_dec(prev_x, prev_y)['y']
         new_list = [new_x, new_y]
-        listFeatures.append(new_list)
+        if new_list not in listFeatures:
+            listFeatures.append(new_list)
         prev_x = int(new_x)
         prev_y = int(new_y)
         iter_position = iter_position + 1
