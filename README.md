@@ -4,11 +4,13 @@ This is a simple GeoJSON generator, written in Python.
 
 It makes use of no external libraries.
 
-At the current point in time, it makes use of a basemap.geojson file, which is a Public Domain map of the country of Cameroon. This will be removed in a future version.
+It attempts to generate a sensible country border, and insert a Capital City, some Large Cities, Small Cities, Villages and Ruins in a random sort of way.
 
 ## 5th World?
 
 5th World is a series of projects that will combine to create a platform for writing.
+
+This project is purposed towards generating the landscape of the continents.
 
 ## License
 
