@@ -1,0 +1,72 @@
+{
+    "features": [
+        {
+            "_id": "fifth_world",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            12,
+                            8
+                        ],
+                        [
+                            15,
+                            15
+                        ],
+                        [
+                            9.3708,
+                            4.7372
+                        ],
+                        [
+                            8.7885,
+                            -6.72
+                        ],
+                        [
+                            4.1738,
+                            -12.9421
+                        ],
+                        [
+                            1.6094,
+                            -15
+                        ],
+                        [
+                            -4.0884,
+                            -15
+                        ],
+                        [
+                            -15,
+                            -15
+                        ],
+                        [
+                            12,
+                            8
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "code": "5WRL",
+                "group": "Countries",
+                "name": "5th World"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    11.072,
+                    11.5211
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "code": "CAP",
+                "group": "Capitals",
+                "name": "Awesome"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

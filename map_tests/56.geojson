@@ -1,0 +1,76 @@
+{
+    "features": [
+        {
+            "_id": "fifth_world",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            3,
+                            14
+                        ],
+                        [
+                            4.6782,
+                            15
+                        ],
+                        [
+                            15,
+                            15
+                        ],
+                        [
+                            7.6187,
+                            14.3853
+                        ],
+                        [
+                            1.2226,
+                            2.6597
+                        ],
+                        [
+                            -1.7451,
+                            1.8595
+                        ],
+                        [
+                            -6.597,
+                            -11.2657
+                        ],
+                        [
+                            -13.5246,
+                            -11.6114
+                        ],
+                        [
+                            -15,
+                            -15
+                        ],
+                        [
+                            3,
+                            14
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "code": "5WRL",
+                "group": "Countries",
+                "name": "5th World"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    14.1549,
+                    12.372
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "code": "CAP",
+                "group": "Capitals",
+                "name": "Awesome"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

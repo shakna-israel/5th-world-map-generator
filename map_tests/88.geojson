@@ -1,0 +1,88 @@
+{
+    "features": [
+        {
+            "_id": "fifth_world",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            8,
+                            1
+                        ],
+                        [
+                            11.1599,
+                            8.9609
+                        ],
+                        [
+                            15,
+                            9.757
+                        ],
+                        [
+                            15,
+                            15
+                        ],
+                        [
+                            2.6154,
+                            1.2276
+                        ],
+                        [
+                            -4.118,
+                            -0.8317
+                        ],
+                        [
+                            -13.5735,
+                            -3.6585
+                        ],
+                        [
+                            -15,
+                            -3.6108
+                        ],
+                        [
+                            -15,
+                            -9.414
+                        ],
+                        [
+                            -15,
+                            -12.0541
+                        ],
+                        [
+                            -15,
+                            -13.9886
+                        ],
+                        [
+                            -15,
+                            -15
+                        ],
+                        [
+                            8,
+                            1
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "code": "5WRL",
+                "group": "Countries",
+                "name": "5th World"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    7.801,
+                    11.201
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "code": "CAP",
+                "group": "Capitals",
+                "name": "Test"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

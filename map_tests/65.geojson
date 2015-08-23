@@ -1,0 +1,80 @@
+{
+    "features": [
+        {
+            "_id": "fifth_world",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            13,
+                            4
+                        ],
+                        [
+                            15,
+                            13.6993
+                        ],
+                        [
+                            15,
+                            15
+                        ],
+                        [
+                            10.3705,
+                            0.6729
+                        ],
+                        [
+                            0.8147,
+                            -2.3919
+                        ],
+                        [
+                            -8.8411,
+                            -4.7702
+                        ],
+                        [
+                            -15,
+                            -6.9456
+                        ],
+                        [
+                            -15,
+                            -9.3178
+                        ],
+                        [
+                            -15,
+                            -14.9784
+                        ],
+                        [
+                            -15,
+                            -15
+                        ],
+                        [
+                            13,
+                            4
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "code": "5WRL",
+                "group": "Countries",
+                "name": "5th World"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    0.5233,
+                    8.223
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "code": "CAP",
+                "group": "Capitals",
+                "name": "Capital"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

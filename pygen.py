@@ -2,7 +2,7 @@ import random
 import json
 
 def random_coordinates_inc(prev_x,prev_y):
-    # Somehow determine max x and y from basemap...
+    """Generate a positive coordinate"""
     x_coord = random.uniform(prev_x + 0, prev_x + 15)
     x_coord = round(x_coord, 4)
     if x_coord > 15:
@@ -18,6 +18,7 @@ def random_coordinates_inc(prev_x,prev_y):
     return {"x": x_coord, "y": y_coord}
 
 def random_coordinates_dec(prev_x,prev_y):
+    """Generate a negative coordinate"""
     x_coord = random.uniform(prev_x + 0, prev_x - 15)
     x_coord = round(x_coord, 4)
     if x_coord > 15:
@@ -33,14 +34,17 @@ def random_coordinates_dec(prev_x,prev_y):
     return {"x": x_coord, "y": y_coord}
 
 def random_name():
+    """Generate a random name from a list"""
     city_list = ["Capital","Awesome","Test","Concept"]
     selection = random.choice(city_list)
     return {"name": selection}
 
 def export_geojson(dictIn, outFile):
+    """Write to file"""
     json.dump(dictIn,open(outFile,"w+"), sort_keys=True, indent=4, separators=(',', ': '))
 
 def map_setup():
+    """Set up the map"""
     basemap = gen_basemap()
     # Set basemap as one of several features:
     finalMap = {}
@@ -50,6 +54,7 @@ def map_setup():
     return finalMap
 
 def gen_basemap():
+    """Generate the base map"""
     basemap = {}
     basemap["type"] = "Feature"
     basemap["_id"] = "fifth_world"
@@ -93,6 +98,7 @@ def gen_basemap():
     return basemap
 
 def gen_lister(minLength, maxLength):
+    """Generate a list of 1s, with a random length between the given ranges"""
     if type(minLength) != int:
         raise OSError
     if type(maxLength) != int:
@@ -106,6 +112,7 @@ def gen_lister(minLength, maxLength):
     return listerList
 
 def main():
+    """Build the map"""
     finalMap = map_setup()
     # Determine the number of Large Cities we'll have, there has to be at least one.
     LargeCities = gen_lister(1, 10)
@@ -141,4 +148,4 @@ def main():
     export_geojson(finalMap, '5thWorld.geojson')
 
 if __name__ == "__main__":
-    main()
+    main(iter)

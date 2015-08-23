@@ -1,0 +1,80 @@
+{
+    "features": [
+        {
+            "_id": "fifth_world",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            2,
+                            5
+                        ],
+                        [
+                            5.1183,
+                            5.9578
+                        ],
+                        [
+                            10.1406,
+                            6.6443
+                        ],
+                        [
+                            11.8972,
+                            15
+                        ],
+                        [
+                            15,
+                            15
+                        ],
+                        [
+                            5.3386,
+                            14.8109
+                        ],
+                        [
+                            -1.5775,
+                            5.3226
+                        ],
+                        [
+                            -11.3546,
+                            -2.2257
+                        ],
+                        [
+                            -14.7988,
+                            -14.7548
+                        ],
+                        [
+                            -15,
+                            -15
+                        ],
+                        [
+                            2,
+                            5
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "code": "5WRL",
+                "group": "Countries",
+                "name": "5th World"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    0.7816,
+                    14.6585
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "code": "CAP",
+                "group": "Capitals",
+                "name": "Test"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

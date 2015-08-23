@@ -1,0 +1,84 @@
+{
+    "features": [
+        {
+            "_id": "fifth_world",
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            3,
+                            7
+                        ],
+                        [
+                            15,
+                            10.72
+                        ],
+                        [
+                            15,
+                            14.177
+                        ],
+                        [
+                            15,
+                            15
+                        ],
+                        [
+                            14.2581,
+                            12.1285
+                        ],
+                        [
+                            11.3928,
+                            10.3488
+                        ],
+                        [
+                            5.5407,
+                            -3.0754
+                        ],
+                        [
+                            -7.6677,
+                            -5.5305
+                        ],
+                        [
+                            -9.4616,
+                            -13.8252
+                        ],
+                        [
+                            -12.8682,
+                            -15
+                        ],
+                        [
+                            -15,
+                            -15
+                        ],
+                        [
+                            3,
+                            7
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "properties": {
+                "code": "5WRL",
+                "group": "Countries",
+                "name": "5th World"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    9.585,
+                    14.5661
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "code": "CAP",
+                "group": "Capitals",
+                "name": "Concept"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}
