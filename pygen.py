@@ -2,7 +2,7 @@ import random
 import json
 
 def random_coordinates():
-    # 0 to 15, with up to 4 decimal places
+    # Somehow determine max x and y from basemap...
     x_coord = random.uniform(0, 15)
     x_coord = round(x_coord, 4)
     y_coord = random.uniform(0, 15)
@@ -31,42 +31,35 @@ def map_setup():
     finalMap['features'].append(basemap)
     return finalMap
 
+def gen_lister(minLength, maxLength):
+    if type(minLength) != int:
+        raise OSError
+    if type(maxLength) != int:
+        raise OSError
+    listLength = random.randint(minLength, maxLength)
+    listerList = []
+    count = 0
+    while count != listLength:
+        listerList.append(1)
+        count = count + 1
+    return listerList
+
 def main():
     finalMap = map_setup()
     # Determine the number of Large Cities we'll have, there has to be at least one.
-    LargeCities = random.randint(1,10)
-    largeCityList = []
-    count = 0
-    while count != LargeCities:
-        largeCityList.append(1)
-        count = count + 1
-    print(str(len(largeCityList)) + " Large Cities.")
+    LargeCities = gen_lister(1, 10)
+    print(str(len(LargeCities)) + " Large Cities.")
     # Randomly choose one of the Large Cities to be the capital.
-    capitalCity = random.choice(largeCityList)
+
     # Determine the number of Small Cities we'll have.
-    SmallCities = random.randint(0,20)
-    smallCityList = []
-    count = 0
-    while count != SmallCities:
-        smallCityList.append(1)
-        count = count + 1
-    print(str(len(smallCityList)) + " Small Cities.")
+    SmallCities = gen_lister(0, 20)
+    print(str(len(SmallCities)) + " Small Cities.")
     # Determine the number of Villages we'll have.
-    villages = random.randint(0,50)
-    villageList = []
-    count = 0
-    while count != villages:
-        villageList.append(1)
-        count = count + 1
-    print(str(len(villageList)) + " Villages.")
+    villages = gen_lister(0, 50)
+    print(str(len(villages)) + " Villages.")
     # Determine the number of Ruins we'll have.
-    ruins = random.randint(0,20)
-    ruinsList = []
-    count = 0
-    while count != ruins:
-        ruinsList.append(1)
-        count = count + 1
-    print(str(len(ruinsList)) + " Ruins.")
+    ruins = gen_lister(0, 20)
+    print(str(len(ruins)) + " Ruins.")
     # Assign a location to the Capital City.
     capitalCityFeature = {'type':'Feature', 'properties':{'name':random_name()['name'],'code':'CAP','group':'Capitals'}}
     capitalCityFeature['geometry'] = {}
