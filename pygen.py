@@ -1,11 +1,18 @@
 import random
 import json
 
-def random_coordinates(prev_x,prev_y):
+def random_coordinates_inc(prev_x,prev_y):
     # Somehow determine max x and y from basemap...
     x_coord = random.uniform(prev_x + 0, prev_x + 15)
     x_coord = round(x_coord, 4)
     y_coord = random.uniform(prev_y + 0, prev_y + 15)
+    y_coord = round(y_coord, 4)
+    return {"x": x_coord, "y": y_coord}
+
+def random_coordinates_dec(prev_x,prev_y):
+    x_coord = random.uniform(prev_x + 0, prev_x - 15)
+    x_coord = round(x_coord, 4)
+    y_coord = random.uniform(prev_y + 0, prev_y - 15)
     y_coord = round(y_coord, 4)
     return {"x": x_coord, "y": y_coord}
 
@@ -41,34 +48,31 @@ def gen_basemap():
     iter_position = 0
     listFeatures = []
     firstList = []
-    prev_x = random_coordinates(0,0)['x']
+    prev_x = random_coordinates_inc(0,0)['x']
     firstList.append(int(prev_x))
-    prev_y = random_coordinates(0,0)['y']
+    prev_y = random_coordinates_inc(0,0)['y']
     firstList.append(int(prev_y))
     listFeatures.append(firstList)
     while iter_position != iter_max:
-        info = iter_max - iter_position
-        new_x = random_coordinates(prev_x, prev_y)['x']
-        new_y = random_coordinates(prev_x, prev_y)['y']
+        new_x = random_coordinates_inc(prev_x, prev_y)['x']
+        new_y = random_coordinates_inc(prev_x, prev_y)['y']
         new_list = [abs(new_x), abs(new_y)]
         listFeatures.append(new_list)
         prev_x = int(new_x)
         prev_y = int(new_y)
         iter_position = iter_position + 1
-    invertedList = invert_list(listFeatures)
-    listFeatures = listFeatures + invertedList
+    iter_position = 0
+    while iter_position != iter_max:
+        new_x = random_coordinates_dec(prev_x, prev_y)['x']
+        new_y = random_coordinates_dec(prev_x, prev_y)['y']
+        new_list = [new_x, new_y]
+        listFeatures.append(new_list)
+        prev_x = int(new_x)
+        prev_y = int(new_y)
+        iter_position = iter_position + 1
     listFeatures.append(listFeatures[0])
     basemap["geometry"]["coordinates"].append(listFeatures)
     return basemap
-
-def invert_list(lister):
-    duplicateList = lister[:]
-    for list in lister:
-        tempList = []
-        for item in list:
-            tempList.append(-item)
-        duplicateList.append(tempList)
-    return duplicateList
 
 def gen_lister(minLength, maxLength):
     if type(minLength) != int:
@@ -104,8 +108,8 @@ def main():
     capitalCityFeature['geometry'] = {}
     capitalCityFeature['geometry']['type'] = 'Point'
     capitalCityFeature['geometry']['coordinates'] = []
-    capitalCityFeature['geometry']['coordinates'].append(random_coordinates(0,0)['x'])
-    capitalCityFeature['geometry']['coordinates'].append(random_coordinates(0,0)['y'])
+    capitalCityFeature['geometry']['coordinates'].append(random_coordinates_inc(0,0)['x'])
+    capitalCityFeature['geometry']['coordinates'].append(random_coordinates_inc(0,0)['y'])
     finalMap['features'].append(capitalCityFeature)
     # Assign a location to each of the Large Cities.
     # Draw roads from the Capital City to each of the Large Cities.
